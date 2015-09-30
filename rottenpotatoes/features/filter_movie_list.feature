@@ -23,9 +23,9 @@ Background: movies have been added to database
 
 Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to check the 'PG' and 'R' checkboxes
-  When I check the following ratings: "PG, R"
+  When I check the following ratings: PG, R
   # enter step(s) to uncheck all other checkboxes
-    And I uncheck the following ratings: "G, PG-13, NC-17"
+    And I uncheck the following ratings: G, PG-13, NC-17
   # enter step to "submit" the search form on the homepage
     And I press "ratings_submit"
   # enter step(s) to ensure that PG and R movies are visible
@@ -42,6 +42,6 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   And I should not see "Aladdin"
 
 #Scenario: all ratings selected
- When I check the following ratings: "PG, R, G, PG-13, NC-17"
+ When I check the following ratings: PG, R, G, PG-13, NC-17
    And I press "ratings_submit"
   Then I should see all the movies
